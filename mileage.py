@@ -1,5 +1,10 @@
 # import
+import datetime
 from datetime import date
+
+# figure out what year it is
+now = datetime.datetime.now()
+year = now.year
 
 # define variables
 mileage_to_date = "How many miles have you run this year? (please enter an integer) "
@@ -23,7 +28,7 @@ while goal == None:
 
 # calculate how many days are left in the year
 f_date = date.today()
-l_date = date(2018, 12, 31)
+l_date = date(year, 12, 31)
 delta = l_date - f_date
 days_left = delta.days
 
@@ -32,6 +37,6 @@ diff_mileage = goal - miles
 if diff_mileage > 0:
 	miles_day = float(diff_mileage) / float(delta.days)
 	goal = int(goal)
-	print("With %s days left in the year, you'll need to average %s miles per day to hit your %s mile goal.") % (days_left, miles_day, goal)
+	print("With %s days left in the year, you'll need to average %s miles per day to hit your %s mile goal.") % (days_left, "{:.2f}".format(miles_day), goal)
 else:
 	print("Congratulations! You hit your mileage goal with %s days left in the year.") % (days_left)
