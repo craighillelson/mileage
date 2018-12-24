@@ -1,42 +1,46 @@
+"""__doc__"""
+
 # import
 import datetime
 from datetime import date
 
 # figure out what year it is
-now = datetime.datetime.now()
-year = now.year
+NOW = datetime.datetime.now()
+YEAR = NOW.year
 
 # define variables
-mileage_to_date = "How many miles have you run this year? (please enter an integer) "
-mileage_goal = "What is your goal for the year? "
-not_an_integer = "That won't work. Please enter an integer. "
-miles = None
-goal = None
+MILEAGE_TO_DATE = "How many miles have you run this year? (please enter an integer) "
+MILEAGE_GOAL = "What is your goal for the year? "
+NOT_AN_INTEGER = "That won't work. Please enter an integer. "
+MILES = None
+GOAL = None
 
 # prompt user for mileage to date and mileage goal for the year
-while miles == None:
-	try:
-		miles = float(raw_input(mileage_to_date))
-	except ValueError:
-		print(not_an_integer)
+while MILES is None:
+    try:
+        MILES = float(raw_input(MILEAGE_TO_DATE))
+    except ValueError:
+        print NOT_AN_INTEGER
 
-while goal == None:
-	try:
-		goal = float(raw_input(mileage_goal))
-	except ValueError:
-		print(not_an_integer)
+while GOAL is None:
+    try:
+        GOAL = float(raw_input(MILEAGE_GOAL))
+    except ValueError:
+        print NOT_AN_INTEGER
 
 # calculate how many days are left in the year
-f_date = date.today()
-l_date = date(year, 12, 31)
-delta = l_date - f_date
-days_left = delta.days
+F_DATE = date.today()
+L_DATE = date(YEAR, 12, 31)
+DELTA = L_DATE - F_DATE
+DAYS_LEFT = DELTA.days
 
-# calculate how many miles per day the user will need to average to achieve their yearly mileage goal
-diff_mileage = goal - miles
-if diff_mileage > 0:
-	miles_day = float(diff_mileage) / float(delta.days)
-	goal = int(goal)
-	print("With %s days left in the year, you'll need to average %s miles per day to hit your %s mile goal.") % (days_left, "{:.2f}".format(miles_day), goal)
+# calculate how many miles per day the user will need to average
+# to achieve their yearly mileage goal
+DIFF_MILEAGE = GOAL - MILES
+if DIFF_MILEAGE > 0:
+    MILES_DAY = float(DIFF_MILEAGE) / float(DELTA.days)
+    GOAL = int(GOAL)
+    print """With %s days left in the year, you'll need to average %s miles per day to hit your
+    %s mile goal.""" % (DAYS_LEFT, "{:.2f}".format(MILES_DAY), GOAL)
 else:
-	print("Congratulations! You hit your mileage goal with %s days left in the year.") % (days_left)
+    print "Congratulations! You hit your mileage goal with %s days left in the year." % (DAYS_LEFT)
