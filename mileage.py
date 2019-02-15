@@ -9,7 +9,8 @@ NOW = datetime.datetime.now()
 YEAR = NOW.year
 
 # define variables
-MILEAGE_TO_DATE = """How many miles have you run this year? (please enter an integer) """
+MILEAGE_TO_DATE = "How many miles have you run this year? " \
+                  "(please enter an integer) "
 MILEAGE_GOAL = "What is your goal for the year? "
 NOT_AN_INTEGER = "That won't work. Please enter an integer. "
 MILES = None
@@ -41,8 +42,8 @@ if DIFF_MILEAGE > 0:
     MILES_DAY = float(DIFF_MILEAGE) / float(DELTA.days)
     GOAL = int(GOAL)
     print(f"""With""", DAYS_LEFT, """days left in the year, you'll need to"""
-          """average""", '{0:.2f}'.format(MILES_DAY), """miles per day to hit your""", GOAL,
-          """mile goal.""")
+          """average""", '{0:.2f}'.format(MILES_DAY),
+          """miles per day to hit your""", GOAL, """mile goal.""")
 else:
     print("""Congratulations! You hit your mileage goal with""", DAYS_LEFT,
-          """days left in the year.""") # % (DAYS_LEFT)
+          """days left in the year.""")
