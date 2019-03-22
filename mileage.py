@@ -41,9 +41,9 @@ DIFF_MILEAGE = GOAL - MILES
 if DIFF_MILEAGE > 0:
     MILES_DAY = float(DIFF_MILEAGE) / float(DELTA.days)
     GOAL = int(GOAL)
-    print(f"""With""", DAYS_LEFT, """days left in the year, you'll need to"""
-          """average""", '{0:.2f}'.format(MILES_DAY),
-          """miles per day to hit your""", GOAL, """mile goal.""")
+    print(f"With, {DAYS_LEFT} days left in the year, you'll need to" \
+          f"average, {'{0:.2}'.format(MILES_DAY)} miles per day to hit " \
+          f"your {GOAL} mile goal.")
 else:
-    print("""Congratulations! You hit your mileage goal with""", DAYS_LEFT,
-          """days left in the year.""")
+    print(f"Congratulations! You hit your mileage goal with {DAYS_LEFT} days" \
+          "left in the year.")
