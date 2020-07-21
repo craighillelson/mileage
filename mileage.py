@@ -4,21 +4,16 @@ provided yearly goal.
 """
 
 import datetime
+import pyinputplus as pyip
 from datetime import date
 
 
-def prompt_user(mileage, user_prompt):
+def prompt_user(user_prompt):
     """
     Get user input, return an error if the user enters a value that is not an
     integer or a float.
     """
-    while mileage is None:
-        try:
-            mileage = float(input(user_prompt))
-        except ValueError:
-            print(NOT_AN_INTEGER_OR_FLOAT)
-
-    return mileage
+    return pyip.inputInt(user_prompt)
 
 
 def diff_mileage(mileage_goal, mileage_ytd):
@@ -32,13 +27,9 @@ def diff_mileage(mileage_goal, mileage_ytd):
 NOW = datetime.datetime.now()
 YEAR = NOW.year
 
-NOT_AN_INTEGER_OR_FLOAT = 'That won\'t work. Please enter an integer or a \
-                          float. '
-MILES = GOAL = None
-
-MILES_RUN = prompt_user(MILES, '\nHow many miles have you run this year? '\
-                        '(please enter an integer or float)\n> ')
-YEARLY_GOAL = float(prompt_user(GOAL, 'What is your goal for the year?\n> '))
+MILES_RUN = prompt_user('\nHow many miles have you run this year? '
+                        '(please enter an integer)\n> ')
+YEARLY_GOAL = prompt_user('\nWhat is your goal for the year?\n> ')
 
 TODAY = date.today()
 LAST_DAY_OF_THE_YEAR = date(YEAR, 12, 31)
