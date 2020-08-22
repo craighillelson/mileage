@@ -47,8 +47,8 @@ DAYS_LEFT = DELTA.days
 
 MILEAGE_DIFF = diff_mileage(YEARLY_GOAL, MILES_RUN)
 if MILEAGE_DIFF <= 0:
-    print(f'Congratulations! You hit your mileage goal with {DAYS_LEFT} days '
-          'left in the year.\n')
+    print(f"Congratulations! You hit your mileage goal with {DAYS_LEFT} days "
+          "left in the year.\n")
 else:
     MILES_DAY = float(MILEAGE_DIFF) / float(DELTA.days)
     print(f'With {DAYS_LEFT} days left in the year, you\'ll need to '
