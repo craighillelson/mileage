@@ -38,7 +38,7 @@ MILES = GOAL = None
 
 MILES_RUN = prompt_user(MILES, "\nHow many miles have you run this year? "\
                         "(please enter an integer or float)\n> ")
-YEARLY_GOAL = float(prompt_user(GOAL, 'What is your goal for the year?\n> '))
+YEARLY_GOAL = float(prompt_user(GOAL, "What is your goal for the year?\n> "))
 
 TODAY = date.today()
 LAST_DAY_OF_THE_YEAR = date(YEAR, 12, 31)
