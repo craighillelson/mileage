@@ -36,8 +36,8 @@ NOT_AN_INTEGER_OR_FLOAT = "That won't work. Please enter an integer or a \
                           float. "
 MILES = GOAL = None
 
-MILES_RUN = prompt_user(MILES, '\nHow many miles have you run this year? '\
-                        '(please enter an integer or float)\n> ')
+MILES_RUN = prompt_user(MILES, "\nHow many miles have you run this year? "\
+                        "(please enter an integer or float)\n> ")
 YEARLY_GOAL = float(prompt_user(GOAL, 'What is your goal for the year?\n> '))
 
 TODAY = date.today()
